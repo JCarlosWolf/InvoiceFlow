@@ -187,3 +187,5 @@ Automated testing practices
 📜 License
 
 MIT License
+
+Documentation available in Spanish upon request.
