@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pycache
+*.sqlite3
+
+# Environments
+.venv/
+env/
+ENV/
+
+# Logs
+*.log
+*.pytest_cache/
+*.coverage
+htmlcov/
+
+# Alembic / DB
+*.db
+*.sqlite
+
+# IDEs
+.vscode/
+.idea/
+
+uploads/*
+!uploads/.gitkeep
+
+__py
+*.pyc
+invoiceflow.db
+test.db
+uploads/
+.env
+
