@@ -1,89 +1,127 @@
-InvoiceFlow – API de Gestión y Validación de Facturas
+# InvoiceFlow
 
-InvoiceFlow es una API REST desarrollada con FastAPI orientada a la gestión y validación automática de facturas.
+InvoiceFlow is a production-ready backend API designed to support internal invoicing operations within a single-company environment.
 
-El proyecto simula un entorno real de validación documental, aplicando reglas de negocio para comprobar coherencia entre base imponible, IVA y total, así como gestión de estados de factura.
+The system focuses on secure multi-user access, controlled data isolation, and clean business-oriented architecture. It was built to reflect real-world enterprise backend standards rather than tutorial-style CRUD applications.
 
-🚀 Tecnologías utilizadas
+---
 
-Python
+## Executive Summary
 
-FastAPI
+InvoiceFlow demonstrates how backend systems can be structured to support controlled financial workflows inside an organization.
 
-Pydantic
+Key characteristics:
 
-SQL
+- Secure multi-user authentication
+- Strict user-level data isolation
+- Modular and maintainable architecture
+- Automated testing validation
+- Containerized deployment for operational consistency
 
-Pytest
+This project represents a backend foundation for internal business process automation.
 
-OpenAPI / Swagger
+---
 
-📌 Funcionalidades principales
+## Technology Stack
 
-Creación y gestión de facturas mediante API REST
+- FastAPI
+- PostgreSQL
+- SQLAlchemy ORM
+- Alembic migrations
+- JWT-based authentication
+- Docker & Docker Compose
+- Pytest automated testing
 
-Validación automática de cálculos (base imponible, IVA y total)
+---
 
-Control de estados: validada / error
+## System Design Philosophy
 
-Subida y gestión de archivos PDF
+The system was designed following enterprise-oriented backend principles:
 
-Arquitectura modular por capas
+- Separation of concerns
+- Service-layer abstraction for business logic
+- Secure authentication and protected endpoints
+- Scalable modular structure
+- Reproducible containerized environments
 
-Documentación automática con Swagger
+Project structure:
 
-🏗 Arquitectura
 
-El proyecto sigue una estructura modular separando:
+app/
+├── api/ # Endpoint definitions
+├── core/ # Security and configuration
+├── models/ # Database models
+├── schemas/ # Data validation schemas
+├── services/ # Business logic layer
+├── database.py # Database engine and session management
 
-Modelos
 
-Esquemas
+---
 
-Lógica de negocio
+## Security & Access Control
 
-Endpoints
+- OAuth2 password flow
+- JWT token generation
+- Password hashing
+- Protected routes
+- User-level invoice ownership enforcement
 
-Base de datos
+Each authenticated user can only access and manage their own invoice records.
 
-Facilitando mantenibilidad y escalabilidad.
+---
 
-📂 Instalación
+## Automated Testing
 
-Clonar repositorio:
+The project includes automated test coverage for:
 
-git clone https://github.com/JCarlosWolf/InvoiceFlow.git
+- User registration flow
+- Authentication and token issuance
+- Endpoint protection validation
+- Invoice creation workflows
+- Multi-user data isolation scenarios
+- Core business logic validation
 
-Crear entorno virtual:
+Run all tests:
 
-python -m venv venv
+```bash
+pytest
 
-Instalar dependencias:
+All tests must pass before production deployment.
 
-pip install -r requirements.txt
+Containerized Deployment
 
-Ejecutar servidor:
+The application is fully containerized.
 
-uvicorn main:app --reload
+To run locally:
 
-Acceder a documentación:
+docker compose up --build
 
-http://127.0.0.1:8000/docs
-🎯 Objetivo del proyecto
+This command:
 
-Demostrar capacidades en:
+Launches PostgreSQL
 
-Desarrollo backend con FastAPI
+Configures environment variables
 
-Implementación de lógica de negocio
+Starts the FastAPI application
 
-Validación de datos
+Interactive API documentation available at:
 
-Diseño de APIs REST
+http://localhost:8000/docs
+Business Relevance
 
-Organización modular de código
+InvoiceFlow is structured to simulate a controlled internal invoicing system, demonstrating:
 
-📌 Autor
+Backend discipline aligned with business requirements
 
-José Carlos Lobo Arroyo
-Backend Developer | Python | FastAPI
+Secure operational workflows
+
+Data segregation principles
+
+Production-ready configuration practices
+
+It represents a foundational backend component for broader business process automation systems.
+
+Author
+
+José Carlos Lobo
+Backend Developer – Business Process Automation
