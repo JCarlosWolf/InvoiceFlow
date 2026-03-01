@@ -1,25 +1,39 @@
+# app/database.py
+
+import os
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
-import os
+from dotenv import load_dotenv
+from app.core.settings import settings
+load_dotenv()
 
-DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./invoiceflow.db")
+# ---------------------------------------------------------
+# Database configuration
+# ---------------------------------------------------------
 
-# Detectar si usamos SQLite
+DATABASE_URL = settings.DATABASE_URL
+
+# Detect SQLite
 is_sqlite = DATABASE_URL.startswith("sqlite")
 
 engine = create_engine(
     DATABASE_URL,
     connect_args={"check_same_thread": False} if is_sqlite else {},
-    pool_pre_ping=True
+    pool_pre_ping=True,
 )
 
 SessionLocal = sessionmaker(
     autocommit=False,
     autoflush=False,
-    bind=engine
+    bind=engine,
 )
 
 Base = declarative_base()
+
+
+# ---------------------------------------------------------
+# Dependency
+# ---------------------------------------------------------
 
 def get_db():
     db = SessionLocal()
