@@ -44,19 +44,17 @@ The system was designed following enterprise-oriented backend principles:
 - Scalable modular structure
 - Reproducible containerized environments
 
-Project structure:
+## Project Structure
 
-
+```
 app/
-├── api/ # Endpoint definitions
-├── core/ # Security and configuration
-├── models/ # Database models
-├── schemas/ # Data validation schemas
-├── services/ # Business logic layer
+├── api/        # Endpoint definitions
+├── core/       # Security and configuration
+├── models/     # Database models
+├── schemas/    # Data validation schemas
+├── services/   # Business logic layer
 ├── database.py # Database engine and session management
-
-
----
+```
 
 ## Security & Access Control
 
