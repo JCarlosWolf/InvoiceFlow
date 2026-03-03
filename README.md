@@ -46,15 +46,13 @@ The system was designed following enterprise-oriented backend principles:
 
 Project structure:
 
-
 app/
-├── api/ # Endpoint definitions
-├── core/ # Security and configuration
-├── models/ # Database models
-├── schemas/ # Data validation schemas
-├── services/ # Business logic layer
+├── api/        # Endpoint definitions
+├── core/       # Security and configuration
+├── models/     # Database models
+├── schemas/    # Data validation schemas
+├── services/   # Business logic layer
 ├── database.py # Database engine and session management
-
 
 ---
 
