@@ -81,7 +81,6 @@ The project includes automated test coverage for:
 
 Run all tests:
 
-```bash
 pytest
 
 All tests must pass before production deployment.
@@ -92,8 +91,6 @@ The application is fully containerized.
 
 To run locally:
 
-```markdown
-```bash
 docker compose up --build
 
 This command:
@@ -126,5 +123,5 @@ Author
 José Carlos Lobo
 Backend Developer – Business Process Automation
 
-```markdown
+
 Open to remote backend opportunities focused on process automation and secure API development.
